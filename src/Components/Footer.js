@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router";
 import { Database } from "../Database/WholeData";
+import {Link} from 'react-router-dom';
 
 const Footer = () => {
     const className = {
@@ -10,7 +11,7 @@ const Footer = () => {
         listBox: "space-y-3 list-none",
         list: "hover:text-white hover:font-medium transform duration-200 cursor-pointer",
         socialListBox: "flex items-center gap-5",
-        socialList: "p-4 rounded-full bg-white/20 text-white hover:bg-blue-600 transform duration-200 cursor-pointer"
+        socialList: "block w-fit p-4 rounded-full bg-white/20 text-white hover:bg-blue-600 transform duration-200 cursor-pointer"
     };
 
     const Data = Database.FooterData;
@@ -27,12 +28,14 @@ const Footer = () => {
           <p className={className.paragraph}>{contactData.address}</p>
           <ul className={className.listBox}>
             {contactData.list.map((data, idx) => (
-              <li
-                className={className.list}
-                key={idx}
-                onClick={() => navigateTo(data.link)}
-              >
-                {data.title}
+              <li key={idx}>
+                <Link
+                  className={className.list}
+                  target={"_blank"}
+                  to={data.link}
+                >
+                  {data.title}
+                </Link>
               </li>
             ))}
           </ul>
@@ -53,11 +56,17 @@ const Footer = () => {
           </ul>
 
           <ul className={className.socialListBox}>
-             {linksData.socialList.map((data, idx) => (
-                <li className={className.socialList} key={idx} onClick={() => navigateTo(data.link)}>
-                    {data.icon}
-                </li>
-             ))}
+            {linksData.socialList.map((data, idx) => (
+              <li key={idx}>
+                <Link
+                  to={data.link}
+                  target={"_blank"}
+                  className={className.socialList}
+                >
+                  {data.icon}
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
       </div>

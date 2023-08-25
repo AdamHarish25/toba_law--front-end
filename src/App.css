@@ -692,6 +692,10 @@ video {
   margin-bottom: 1.25rem !important;
 }
 
+.block{
+  display: block !important;
+}
+
 .flex{
   display: flex !important;
 }
@@ -716,6 +720,10 @@ video {
   height: 300px !important;
 }
 
+.h-\[400px\]{
+  height: 400px !important;
+}
+
 .h-\[500px\]{
   height: 500px !important;
 }
@@ -732,10 +740,6 @@ video {
 
 .h-screen{
   height: 100vh !important;
-}
-
-.h-\[400px\]{
-  height: 400px !important;
 }
 
 .w-16{
