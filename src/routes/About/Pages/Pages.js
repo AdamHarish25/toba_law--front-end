@@ -28,7 +28,7 @@ export const AboutPage_2 = () => {
     title: "text-3xl md:text-4xl font-Playfair_Display font-bold",
     subtitle: "text-xs text-white/60 whitespace-pre-line",
     button: "flex items-center text-xs gap-5 bg-blue-600 rounded-sm p-3",
-    img: "grayscale h-[500px] rounded-lg order-1 md:order-2",
+    img: "grayscale h-auto md:h-[500px] rounded-lg order-1 md:order-2",
   };
 
   const Data = Datas.page_2;

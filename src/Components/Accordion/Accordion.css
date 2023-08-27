@@ -60,7 +60,6 @@
 }
 
 .accordion-content {
-  padding: 10px;
   max-height: 0;
   overflow: hidden;
   opacity: 0;
