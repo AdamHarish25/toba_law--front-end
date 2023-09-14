@@ -40,22 +40,23 @@ export const Database = {
     button: {
       icon: <AiOutlineMessage />,
       title: "Hubungi Kami",
-      link: "/Contact"
+      link: "/Contact",
     },
   },
 
   FooterData: {
     contact: {
       title: "Kontak",
-      address: "43 Raymouth Rd. Baltemoer, London 3910",
+      address:
+        "Graha Mustika Ratu; Jalan Gatot Subroto No.1 Menteng Dalam, lantai 6, RT.2/RW.1, Menteng Dalam, Tebet, South Jakarta City, Jakarta 12780",
       list: [
         {
-          title: "+628291093019",
-          link: "/",
+          title: "+62858-1116-5429",
+          link: "https://wa.me/6285811165429",
         },
         {
-          title: "+628193204910",
-          link: "/",
+          title: "+62838-7766-2277",
+          link: "https://wa.me/6283877662277",
         },
         {
           title: "tobalawfirm01@tobalaw.my.id",
@@ -630,11 +631,12 @@ export const Database = {
       lists: [
         {
           icon: <FaHome />,
-          content: "155 Market St #101, Paterson, NJ 07505, United States",
+          content:
+            "Graha Mustika Ratu; Jalan Gatot Subroto No.1 Menteng Dalam, lantai 6, RT.2/RW.1, Menteng Dalam, Tebet, South Jakarta City, Jakarta 12780",
         },
         {
           icon: <FaPhone />,
-          content: "+628193204910",
+          content: "+62858-1116-5429",
         },
         {
           icon: <FaEnvelope />,
@@ -653,10 +655,10 @@ export const Database = {
         },
       ],
 
-     form2: {
-      placeholder: "Email",
-      type: "email"
-     },
+      form2: {
+        placeholder: "Email",
+        type: "email",
+      },
 
       form: "Tulis pesan mu disini...",
 
