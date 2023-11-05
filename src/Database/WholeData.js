@@ -51,11 +51,11 @@ export const Database = {
         "Graha Mustika Ratu; Jalan Gatot Subroto No.1 Menteng Dalam, lantai 6, RT.2/RW.1, Menteng Dalam, Tebet, South Jakarta City, Jakarta 12780",
       list: [
         {
-          title: "+62858-1116-5429",
+          title: "+62-858-1116-5429",
           link: "https://wa.me/6285811165429",
         },
         {
-          title: "+62838-7766-2277",
+          title: "+62-838-7766-2277",
           link: "https://wa.me/6283877662277",
         },
         {
@@ -347,32 +347,30 @@ export const Database = {
     page_7: {
       title: "Hubungi Kami",
 
-      forms1: [
-        {
-          placeholder: "Nama Lengkap",
-          type: "text",
-        },
-        {
-          placeholder: "Email",
-          type: "email",
-        },
-      ],
+      form: {
+        placeholder: "Nama Lengkap",
+        type: "text",
+      },
 
-      forms2: [
-        {
-          placeholder: "Nomor Telp",
-          type: "number",
-        },
-        {
-          placeholder: "Pilih Layanan",
-          type: "text",
-        },
-      ],
+      form1: {
+        placeholder: "No.Telp",
+        type: "number",
+      },
 
-      form: "Tulis pesan mu disini...",
+      form2: {
+        placeholder: "Layanan",
+        type: "text",
+      },
+
+      form3: {
+        placeholder: "Email",
+        type: "email",
+      },
+
+      placeholder: "Tulis pesan mu disini...",
 
       submit: {
-        title: "Send Message",
+        title: "Kirim Pesan",
         link: "/",
       },
     },
@@ -636,7 +634,7 @@ export const Database = {
         },
         {
           icon: <FaPhone />,
-          content: "+62858-1116-5429",
+          content: "+62-858-1116-5429",
         },
         {
           icon: <FaEnvelope />,
@@ -644,23 +642,27 @@ export const Database = {
         },
       ],
 
-      forms1: [
-        {
-          placeholder: "Nama Awal",
-          type: "text",
-        },
-        {
-          placeholder: "Nama Akhir",
-          type: "text",
-        },
-      ],
+      form: {
+        placeholder: "Nama Lengkap",
+        type: "text",
+      },
+
+      form1: {
+        placeholder: "No.Telp",
+        type: "number",
+      },
 
       form2: {
+        placeholder: "Layanan",
+        type: "text",
+      },
+
+      form3: {
         placeholder: "Email",
         type: "email",
       },
 
-      form: "Tulis pesan mu disini...",
+      placeholder: "Tulis pesan mu disini...",
 
       submit: {
         title: "Send Message",

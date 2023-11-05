@@ -3,6 +3,8 @@ import { Database } from "../../../Database/WholeData";
 import { FaChevronRight } from "react-icons/fa";
 import Tabs from "../../../Components/Tabs/Tabs";
 import Accordion from "../../../Components/Accordion/Accordion";
+import { useState } from "react";
+import axios from "axios";
 
 const Datas = Database.HomeData;
 
@@ -229,6 +231,33 @@ export const HomePage_6 = () => {
 };
 
 export const HomePage_7 = () => {
+
+   const [name, setName] = useState("");
+   const [email, setEmail] = useState("");
+   const [service, setService] = useState("");
+   const [phone, setPhone] = useState("");
+   const [message, setMessage] = useState("");
+   const navigate = useNavigate();
+
+   const addNewData = async (e) => {
+     e.preventDefault();
+     try {
+       await axios.post("http://localhost:5000/contacts", {
+         name: name,
+         email: email,
+         service: service,
+         phone: phone,
+         message: message,
+       });
+       console.log("Success!");
+       window.location.reload();
+     } catch (error) {
+       if (error.response) {
+         console.log(error.response.data.msg);
+       }
+     }
+   };
+
   const className = {
     container: "w-full p-10 lg:p-20 space-y-7 bg-dark-gray",
     title: "text-2xl md:text-3xl font-medium font-Playfair_Display",
@@ -245,28 +274,52 @@ export const HomePage_7 = () => {
     <div className={className.container}>
       <h1 className={className.title}>{Data.title}</h1>
 
-      <form action="mailto:adamharits25@gmail.com" className={className.form}>
+      <form onSubmit={addNewData} className={className.form}>
         <div className={className.inlineForm}>
-          {Data.forms1.map((data1, idx1) => (
-            <input
-              key={idx1}
-              type={data1.type}
-              placeholder={data1.placeholder}
-              className={className.input}
-            />
-          ))}
+          <input
+            type={Data.form.type}
+            placeholder={Data.form.placeholder}
+            className={className.input}
+            value={name}
+            required
+            onChange={(e) => setName(e.target.value)}
+          />
+          <input
+            type={Data.form1.type}
+            placeholder={Data.form1.placeholder}
+            className={className.input}
+            value={phone}
+            required
+            onChange={(e) => setPhone(e.target.value.toString())}
+          />
         </div>
+
         <div className={className.inlineForm}>
-          {Data.forms2.map((data2, idx2) => (
-            <input
-              key={idx2}
-              type={data2.type}
-              placeholder={data2.placeholder}
-              className={className.input}
-            />
-          ))}
+          <input
+            type={Data.form2.type}
+            placeholder={Data.form2.placeholder}
+            className={className.input}
+            value={service}
+            required
+            onChange={(e) => setService(e.target.value)}
+          />
+          <input
+            type={Data.form3.type}
+            placeholder={Data.form3.placeholder}
+            className={className.input}
+            value={email}
+            required
+            onChange={(e) => setEmail(e.target.value)}
+          />
         </div>
-        <textarea placeholder={Data.form} className={`${className.input} h-[200px]`}/>
+
+        <textarea
+          placeholder={Data.placeholder}
+          className={`${className.input} h-[200px]`}
+          value={message}
+          onChange={(e) => setMessage(e.target.value)}
+        />
+
         <button type="submit" className={className.button}>
           {Data.submit.title}
         </button>
